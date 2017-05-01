@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+    font-family: Raleway;
+    color: #ffffff;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+p {
+    color: rgb(18, 100, 111);
+}
+
+header {
+    height: 220px;
+    margin: auto;
+    background-color: #c2b394;
+    text-align: center;
+    padding: 1% 0;
+    background: url(css/mountain_forest_3-wallpaper-1366x768.jpg) no-repeat center;
+}
+
+.intro {
+    background: url(css/mountain_forest_3-wallpaper-1366x768.jpg) no-repeat;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.form {
+    width: 410px;
+    height: 410px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(94, 94, 94, 0.5);
+    text-align: center;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.logout {
+    position: absolute;
+    right: 55px;
+    top: 20px;
+}
+
+.back {
+    position: absolute;
+    right: 600px;
+    top: 320px;
+    background-color: #ececec;
+}
+
+.text {
+    position: relative;
+    top: 20%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(94, 94, 94);
+    text-align: center;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 767px){
+    .masonry[data-columns]::before {
+        content: '1 .col-xs-12';
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .masonry[data-columns]::before {
+        content: '2 .col-xs-6';
+    }
+}
+@media screen and (min-width: 992px) {
+    .masonry[data-columns]::before {
+        content: '4 .col-xs-3';
+    }
+}
