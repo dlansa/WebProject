@@ -312,6 +312,7 @@
 }
 .fa-book:before {
   content: "\f02d";
+  color: #2b542c;
 }
 .fa-bookmark:before {
   content: "\f02e";

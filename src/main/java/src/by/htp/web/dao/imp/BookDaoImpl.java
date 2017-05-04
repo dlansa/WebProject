@@ -20,7 +20,7 @@ public class BookDaoImpl implements BookDao{
     private static final String LOGIN_DB = "db.login";
     private static final String PASSWORD_DB = "db.pass";
 	private static final String SEARCH_BOOKS = "select * from webdb.book";
-	private static final String ADD_BOOK = "INSERT INTO webdb.book (`title`) VALUES (?)";
+	private static final String ADD_BOOK = "INSERT INTO webdb.book (`title`, `author`, `picture`, `price`, `link`) VALUES (?, ?, ?, ?, ?)";
 
 	private static BookDaoImpl instance = new BookDaoImpl();
 
@@ -34,7 +34,7 @@ public class BookDaoImpl implements BookDao{
 		Connection connection = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
-		List<Book> books = new ArrayList<Book>();;
+		List<Book> books = new ArrayList<>();;
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -53,26 +53,16 @@ public class BookDaoImpl implements BookDao{
 				String url = resultSet.getString("link");
 				Book book = new Book(title, author, price, picUrl, url);
 				books.add(book);
-				//hello!
 			}
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
-			if (statement != null)
-				try {
-					statement.close();
-					if (connection != null)
-						connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+			closeConnection(statement, connection);
 		}
 		return books;
 	}
 
 	public boolean addBook(Book book) {
-		
-		String title = book.getTitle();		
 		
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -85,21 +75,29 @@ public class BookDaoImpl implements BookDao{
             String passDB = bundle.getString(PASSWORD_DB);
             connection = DriverManager.getConnection(urlCon, usernameDB, passDB);
 			statement = connection.prepareStatement(ADD_BOOK);
-			statement.setString(1, title);
+			statement.setString(1, book.getTitle());
+			statement.setString(2, book.getAuthor());
+			statement.setString(3, book.getPicURL());
+			statement.setString(4, book.getPrice());
+			statement.setString(5, book.getUrl());
 			statement.execute();			
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 			return false;
 		} finally {
-			if (statement != null)
-				try {
-					statement.close();
-					if (connection != null)
-						connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+			closeConnection(statement, connection);
 		}
 		return true;
-	}	
+	}
+
+	private void closeConnection(Statement statement, Connection connection){
+		if (statement != null)
+			try {
+				statement.close();
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
 }

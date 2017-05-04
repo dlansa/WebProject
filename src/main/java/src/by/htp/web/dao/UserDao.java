@@ -4,6 +4,7 @@ import src.by.htp.web.domain.User;
 
 public interface UserDao {
 	
-	public User read(String user, String password);
+	User read(String user, String password);
+	boolean create(String user, String password);
 
 }

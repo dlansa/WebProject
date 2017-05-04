@@ -11,16 +11,18 @@
 <title>Book was added</title>
 </head>
 <body>
-<header></header>
-	<div class="intro">
-		<h3><br>
-			Book wad added!
-			<br><br> <a href="hello.html">
-				<button type="submit" class="btn btn-default">
-					<i class="fa fa-sign-in"></i> Back
-				</button>
+<div class="intro">
+	<div class="form">
+		<div class="text">
+			Book was added!<br><br>
+			<a href="hello.html" class="btn btn-default">
+				<i class="fa fa-sign-in"></i> Back
 			</a>
-		</h3>
+		</div>
 	</div>
+</div>
+<footer>
+	<a href="https://github.com/dlansa"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a>
+</footer>
 </body>
 </html>

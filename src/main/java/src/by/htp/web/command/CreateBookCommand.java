@@ -16,7 +16,11 @@ public class CreateBookCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String title = request.getParameter(REQUEST_PARAM_BOOK_TITLE);
-		Book book = new Book(title);
+		String author = request.getParameter(REQUEST_PARAM_BOOK_AUTHOR);
+		String price = request.getParameter(REQUEST_PARAM_BOOK_PRICE);
+		String picURL = request.getParameter(REQUEST_PARAM_BOOK_PICTURE);
+		String url = request.getParameter(REQUEST_PARAM_BOOK_LINK);
+		Book book = new Book(title, author, price, picURL, url);
 		String result = null;
 		if (bookDao.addBook(book))
 			result = PAGE_BOOK_ADDITION_SUCCESS;

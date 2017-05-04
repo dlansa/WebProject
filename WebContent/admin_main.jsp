@@ -14,10 +14,13 @@
 </head>
 <body>
 <header></header>
-<form class="logout" action="hello.html">
-    <button type="submit" class="btn btn-default">
+<form class="logout">
+    <a href="hello.html"class="btn btn-default">
         <i class="fa fa-sign-in"></i> Logout
-    </button>
+    </a><br>
+    <a href="add_book.jsp"class="btn btn-default">
+        <i class="fa fa-book"></i> Add book
+    </a>
 </form>
 <div class="container-fluid">
     <h1>The last added books are:</h1>
@@ -41,10 +44,6 @@
             </div>
         </c:forEach>
     </div>
-    <form action="MainServlet" method="POST">
-        <input name="action" type="hidden" value="addBook"/> <input
-            name="title" type="text"/> <input name="submit" type="submit"/>
-    </form>
 </div>
 <footer>
     <a href="https://github.com/dlansa"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a>

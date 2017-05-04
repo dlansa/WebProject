@@ -11,18 +11,17 @@
 <title>Addition failer!</title>
 </head>
 <body>
-<div class="intro">
-	<div class="form">
-		<div class="text">
-			Addition failer!<br><br>
-			<a href="hello.html" class="btn btn-default">
-				<i class="fa fa-sign-in"></i> Back
+<header></header>
+	<div class="intro">
+		<h3><br>
+			Error:
+			<c:out value="${FAILER}" />
+			<br><br> <a href="hello.html">
+				<button type="submit" class="btn btn-default">
+					<i class="fa fa-sign-in"></i> Back
+				</button>
 			</a>
-		</div>
+		</h3>
 	</div>
-</div>
-<footer>
-	<a href="https://github.com/dlansa"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a>
-</footer>
 </body>
 </html>
