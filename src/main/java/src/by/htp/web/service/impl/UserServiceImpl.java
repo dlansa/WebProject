@@ -1,7 +1,7 @@
 package src.by.htp.web.service.impl;
 
 import src.by.htp.web.dao.UserDao;
-import src.by.htp.web.dao.imp.UserDaoImpl;
+import src.by.htp.web.dao.impl.UserDaoImpl;
 import src.by.htp.web.domain.User;
 import src.by.htp.web.service.UserService;
 

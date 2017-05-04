@@ -5,8 +5,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <link href="style.css" rel="stylesheet">
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <title>Sing up</title>
 </head>
@@ -21,7 +21,7 @@
                 <input type="password" class="form-control" value="" name="pass"/><br>
                 <i class="fa fa-lock"></i> Repeat password
                 <input type="password" class="form-control" value="" name="pass2"/><br>
-                <button class="btn btn-default">
+                <button type="submit" class="btn btn-default">
                     <i class="fa fa-user-plus" aria-hidden="true"></i> Sign up
                 </button>
                 <a href="hello.html" class="btn btn-default">

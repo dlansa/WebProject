@@ -1,4 +1,4 @@
-package src.by.htp.web.dao.imp;
+package src.by.htp.web.dao.impl;
 
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
 	private static final String LOGIN_DB = "db.login";
 	private static final String PASSWORD_DB = "db.pass";
 	private static final String SEARCH_USER = "select * from user where user.login=? and user.password=?";
-	private static final String ADD_USER = "INSERT INTO webdb.user (`login`, `password`) VALUES (?, ?)";
+	private static final String ADD_USER = "INSERT INTO webdb.user (login, password) VALUES (?, ?)";
 
 	public static UserDaoImpl getInstance() {
 		return instance;
@@ -70,7 +70,7 @@ public class UserDaoImpl implements UserDao {
 			connection = DriverManager.getConnection(urlCon, usernameDB, passDB);
 			statement = connection.prepareStatement(ADD_USER);
 			statement.setString(1, user);
-			statement.setString(1, password);
+			statement.setString(2, password);
 			statement.execute();
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();

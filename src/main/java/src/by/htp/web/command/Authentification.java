@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import src.by.htp.web.dao.imp.UserDaoImpl;
 import src.by.htp.web.domain.Book;
 import src.by.htp.web.domain.User;
 import src.by.htp.web.service.BookService;

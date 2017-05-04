@@ -1,16 +1,10 @@
 package src.by.htp.web.command;
 
-import src.by.htp.web.dao.BookDao;
 import src.by.htp.web.dao.UserDao;
-import src.by.htp.web.dao.imp.BookDaoImpl;
-import src.by.htp.web.dao.imp.UserDaoImpl;
-import src.by.htp.web.domain.Book;
-import src.by.htp.web.domain.User;
+import src.by.htp.web.dao.impl.UserDaoImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.List;
 
 import static src.by.htp.web.util.Permanents.*;
 
@@ -20,24 +14,25 @@ public class CreaterUserCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        String page = null;
         String login = request.getParameter(REQUEST_PARAM_USER_LOGIN);
         String password = request.getParameter(REQUEST_PARAM_USER_PASS);
         String passwordRep = request.getParameter(REQUEST_PARAM_USER_PASS_REPEATE);
         String result = null;
 
         if (password.equals(passwordRep)) {
-            if (userDao.create(login, password))
-                result = PAGE_USER_ADDITION_SUCCESS;
+            if (userDao.create(login, password)) {
+                request.setAttribute("NICE", "user was added!");
+                result = PAGE_SUCCESS;
+            }
             else {
-                request.setAttribute("FAIL", "book wasn't added");
-                result = PAGE_USER_ADDITION_FAILER;
+                request.setAttribute("ERROR", "user is already exist!");
+                result = PAGE_ERROR;
             }
         } else {
-            request.setAttribute("ERROR", "user is already exist!");
-            page = PAGE_ERROR;
+            request.setAttribute("ERROR", "passwords are not the same.");
+            result = PAGE_ERROR;
         }
-        return page;
+        return result;
     }
 
 }

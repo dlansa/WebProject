@@ -1,4 +1,4 @@
-package src.by.htp.web.dao.imp;
+package src.by.htp.web.dao.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +20,7 @@ public class BookDaoImpl implements BookDao{
     private static final String LOGIN_DB = "db.login";
     private static final String PASSWORD_DB = "db.pass";
 	private static final String SEARCH_BOOKS = "select * from webdb.book";
-	private static final String ADD_BOOK = "INSERT INTO webdb.book (`title`, `author`, `picture`, `price`, `link`) VALUES (?, ?, ?, ?, ?)";
+	private static final String ADD_BOOK = "INSERT INTO webdb.book (title, author, picture, price, link) VALUES (?, ?, ?, ?, ?)";
 
 	private static BookDaoImpl instance = new BookDaoImpl();
 
@@ -63,6 +63,12 @@ public class BookDaoImpl implements BookDao{
 	}
 
 	public boolean addBook(Book book) {
+
+        String title = book.getTitle();
+        String author = book.getAuthor();
+        String picUrl = book.getPicURL();
+        String price = book.getPrice();
+        String url = book.getUrl();
 		
 		Connection connection = null;
 		PreparedStatement statement = null;
@@ -74,13 +80,13 @@ public class BookDaoImpl implements BookDao{
             String usernameDB = bundle.getString(LOGIN_DB);
             String passDB = bundle.getString(PASSWORD_DB);
             connection = DriverManager.getConnection(urlCon, usernameDB, passDB);
-			statement = connection.prepareStatement(ADD_BOOK);
-			statement.setString(1, book.getTitle());
-			statement.setString(2, book.getAuthor());
-			statement.setString(3, book.getPicURL());
-			statement.setString(4, book.getPrice());
-			statement.setString(5, book.getUrl());
-			statement.execute();			
+            statement = connection.prepareStatement(ADD_BOOK);
+            statement.setString(1, title);
+            statement.setString(2, author);
+            statement.setString(3, picUrl);
+            statement.setString(4, price);
+            statement.setString(5, url);
+            statement.execute();
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 			return false;

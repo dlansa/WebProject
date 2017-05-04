@@ -21,11 +21,11 @@ header {
     background-color: #c2b394;
     text-align: center;
     padding: 1% 0;
-    background: url(css/mountain_forest_3-wallpaper-1366x768.jpg) no-repeat center;
+    background: url(mountain_forest_3-wallpaper-1366x768.jpg) no-repeat center;
 }
 
 .intro {
-    background: url(css/mountain_forest_3-wallpaper-1366x768.jpg) no-repeat;
+    background: url(mountain_forest_3-wallpaper-1366x768.jpg) no-repeat;
     min-height: 100%;
     background-position: center;
     background-size: cover;

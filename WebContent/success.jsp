@@ -5,16 +5,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <link href="style.css" rel="stylesheet">
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
-    <title>Error</title>
+    <title>Success</title>
 </head>
 <body>
 <div class="intro">
     <div class="form">
         <div class="text">
-            Reg sccss!
+            Nice:
+            <c:out value="${NICE}"/>
+            <br><br><a href="hello.html" type="submit" class="btn btn-default">
+            <i class="fa fa-sign-in"></i> Back
         </a>
         </div>
     </div>

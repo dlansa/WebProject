@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="style.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 <title>User page</title>
 <meta charset="utf-8">
-<link href="style.css" rel="stylesheet">
-<link href="bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
 </head>
 <body>

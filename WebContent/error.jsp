@@ -5,8 +5,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <link href="style.css" rel="stylesheet">
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <title>Error</title>
 </head>
@@ -16,11 +16,9 @@
         <div class="text">
             Error:
             <c:out value="${ERROR}"/>
-            <br><br><a href="hello.html">
-            <button type="submit" class="btn btn-default">
+            <br><br><a href="hello.html" type="submit" class="btn btn-default">
                 <i class="fa fa-sign-in"></i> Back
-            </button>
-        </a>
+            </a>
         </div>
     </div>
 </div>

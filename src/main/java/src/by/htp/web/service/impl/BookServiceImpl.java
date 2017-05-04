@@ -3,7 +3,7 @@ package src.by.htp.web.service.impl;
 import java.util.List;
 
 import src.by.htp.web.dao.BookDao;
-import src.by.htp.web.dao.imp.BookDaoImpl;
+import src.by.htp.web.dao.impl.BookDaoImpl;
 import src.by.htp.web.domain.Book;
 import src.by.htp.web.service.BookService;
 
